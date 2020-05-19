@@ -1,0 +1,36 @@
+
+<!doctype HTML>
+<html>
+    <head>
+        <title>Realidade aumentada - Image tracking </title>
+        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    </head>
+
+<body style="margin : 0px; overflow: hidden;">
+
+  <!-- a-frame scene -->
+  <a-scene vr-mode-ui="enabled: false;"
+           renderer="logarithmicDepthBuffer: true;"
+           embedded arjs="trackingMethod: best; 
+                          sourceType: webcam; 
+                          debugUIEnabled: false;">
+       <a-nft type="nft"
+            url="/assets/marcador"
+            smooth="true"
+            smoothCount="10"
+            smoothTolerance=".01"
+            smoothThreshold="5">
+       
+            <a-box position="0 0.5 0" color="green"></a-box>
+       
+     </a-nft>
+
+       
+     </a-nft>
+    
+    <!-- static camera that moves according to the device movemenents -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
